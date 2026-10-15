@@ -15,6 +15,8 @@ Plain static HTML and CSS: no build step, no JavaScript, no cookies, no analytic
 | `og.png` | Social preview image (1200×630) |
 | `vercel.json` | Trailing-slash URLs and security headers |
 
+The home page carries the Google Search Console `google-site-verification` meta tag; keep it in every change or Search Console loses verification.
+
 Every page carries a canonical URL, Open Graph/Twitter tags and Person JSON-LD. When adding a page, copy an existing one and change the `<title>`, description, canonical and `og:url`.
 
 Award wording is copied exactly as printed on each certificate.
