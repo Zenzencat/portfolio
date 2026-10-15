@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Pelagic — Trong Srinutaphong</title>
+<meta name="description" content="Project Pelagic by Trong Srinutaphong (Zen): Oil-slick detection in Sentinel-1 SAR satellite imagery with a U-Net.">
+<meta name="author" content="Trong Srinutaphong">
+<link rel="canonical" href="https://trongsrinutaphong.vercel.app/projects/pelagic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trong Srinutaphong">
+<meta property="og:title" content="Project Pelagic — Trong Srinutaphong">
+<meta property="og:description" content="Project Pelagic by Trong Srinutaphong (Zen): Oil-slick detection in Sentinel-1 SAR satellite imagery with a U-Net.">
+<meta property="og:url" content="https://trongsrinutaphong.vercel.app/projects/pelagic/">
+<meta property="og:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trong Srinutaphong (ตรง ศรีนุตพงษ์) — ML, computer vision, cybersecurity and robotics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Project Pelagic — Trong Srinutaphong">
+<meta name="twitter:description" content="Project Pelagic by Trong Srinutaphong (Zen): Oil-slick detection in Sentinel-1 SAR satellite imagery with a U-Net.">
+<meta name="twitter:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://trongsrinutaphong.vercel.app/#person",
+   "name": "Trong Srinutaphong",
+   "alternateName": [
+    "ตรง ศรีนุตพงษ์",
+    "Zen"
+   ],
+   "givenName": "Trong",
+   "familyName": "Srinutaphong",
+   "url": "https://trongsrinutaphong.vercel.app/",
+   "image": "https://trongsrinutaphong.vercel.app/og.png",
+   "description": "Student developer in Bangkok working on machine learning, computer vision, cybersecurity and robotics.",
+   "knowsAbout": [
+    "Machine learning",
+    "Computer vision",
+    "Cybersecurity",
+    "Robotics"
+   ],
+   "sameAs": [
+    "https://github.com/Zenzencat"
+   ]
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "Project Pelagic",
+   "url": "https://trongsrinutaphong.vercel.app/projects/pelagic/",
+   "description": "Oil-slick detection in Sentinel-1 SAR satellite imagery with a U-Net",
+   "creator": {
+    "@id": "https://trongsrinutaphong.vercel.app/#person"
+   },
+   "dateCreated": "2026-09",
+   "keywords": "PyTorch, U-Net, FastAPI, SQLite, React, Leaflet.js",
+   "codeRepository": "https://github.com/Zenzencat/Project-Pelagic"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://trongsrinutaphong.vercel.app/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Projects",
+     "item": "https://trongsrinutaphong.vercel.app/projects/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Project Pelagic",
+     "item": "https://trongsrinutaphong.vercel.app/projects/pelagic/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/">Trong Srinutaphong</a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/" aria-current="page">Projects</a><a href="/awards/">Awards</a><a href="/contact/">Contact</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a> / Project Pelagic</nav>
+<p class="kicker">School capstone · AI Engineering major</p>
+<h1>Project Pelagic</h1>
+<p class="lead">Oil-slick detection in Sentinel-1 SAR satellite imagery with a U-Net</p>
+<p class="credit">Team project · my role: lead developer (model, backend and front-end).</p>
+<ul class="tags"><li>PyTorch</li><li>U-Net</li><li>FastAPI</li><li>SQLite</li><li>React</li><li>Leaflet.js</li></ul>
+<h2>What it is</h2>
+<p>A maritime oil-slick detection system: U-Net segmentation over Sentinel-1 SAR satellite imagery, served through a full web pipeline so a spill can be seen on a map, not just in a tensor. A live pipeline fetches new Sentinel-1 scenes on demand from the Copernicus Data Space Ecosystem and runs them through the same model, with nearby vessels matched from Global Fishing Watch AIS data.</p>
+<h2>Why</h2>
+<p>Oil slicks at sea are hard to spot early: optical satellites are blocked by cloud and darkness, while radar (SAR) sees through both — but SAR imagery needs trained models to separate slicks from look-alikes. Early detection shrinks response time and environmental damage.</p>
+<h2>How it works</h2>
+<ol><li>Assemble public Zenodo Sentinel-1 datasets (Parts I–III)</li><li>Scene-aware train/test splitting to prevent leakage</li><li>Train U-Net with BCE-Dice loss</li><li>Build FastAPI inference service + SQLite</li><li>React/Leaflet map front-end</li><li>Live fetch: Sentinel-1 from Copernicus (CDSE) → inference → map, with AIS vessel matching</li></ol>
+<h2>Results</h2>
+<p>Mean oil IoU of <strong>0.724</strong> on the held-out test set. Validated against a real spill case study (PERKASA).</p>
+<p><strong>Limitations:</strong> Detection only by design.</p>
+<h2>Links</h2>
+<ul><li><a href="https://github.com/Zenzencat/Project-Pelagic" rel="noopener">Source code on GitHub</a></li></ul>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>© 2026 Trong Srinutaphong (<span lang="th">ตรง ศรีนุตพงษ์</span>) · <a href="https://github.com/Zenzencat" rel="me">GitHub</a></p>
+<p class="muted">No cookies, no analytics, no tracking.</p>
+</div></footer>
+</body>
+</html>

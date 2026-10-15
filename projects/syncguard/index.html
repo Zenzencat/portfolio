@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SyncGuard — Trong Srinutaphong</title>
+<meta name="description" content="SyncGuard by Trong Srinutaphong (Zen): GNSS spoofing and jamming detection for 4G/5G base-station timing.">
+<meta name="author" content="Trong Srinutaphong">
+<link rel="canonical" href="https://trongsrinutaphong.vercel.app/projects/syncguard/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trong Srinutaphong">
+<meta property="og:title" content="SyncGuard — Trong Srinutaphong">
+<meta property="og:description" content="SyncGuard by Trong Srinutaphong (Zen): GNSS spoofing and jamming detection for 4G/5G base-station timing.">
+<meta property="og:url" content="https://trongsrinutaphong.vercel.app/projects/syncguard/">
+<meta property="og:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trong Srinutaphong (ตรง ศรีนุตพงษ์) — ML, computer vision, cybersecurity and robotics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SyncGuard — Trong Srinutaphong">
+<meta name="twitter:description" content="SyncGuard by Trong Srinutaphong (Zen): GNSS spoofing and jamming detection for 4G/5G base-station timing.">
+<meta name="twitter:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://trongsrinutaphong.vercel.app/#person",
+   "name": "Trong Srinutaphong",
+   "alternateName": [
+    "ตรง ศรีนุตพงษ์",
+    "Zen"
+   ],
+   "givenName": "Trong",
+   "familyName": "Srinutaphong",
+   "url": "https://trongsrinutaphong.vercel.app/",
+   "image": "https://trongsrinutaphong.vercel.app/og.png",
+   "description": "Student developer in Bangkok working on machine learning, computer vision, cybersecurity and robotics.",
+   "knowsAbout": [
+    "Machine learning",
+    "Computer vision",
+    "Cybersecurity",
+    "Robotics"
+   ],
+   "sameAs": [
+    "https://github.com/Zenzencat"
+   ]
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "SyncGuard",
+   "url": "https://trongsrinutaphong.vercel.app/projects/syncguard/",
+   "description": "GNSS spoofing and jamming detection for 4G/5G base-station timing",
+   "creator": {
+    "@id": "https://trongsrinutaphong.vercel.app/#person"
+   },
+   "dateCreated": "2026-09",
+   "keywords": "Python, scikit-learn, SHAP, FastAPI, PySAL, SQLite, Docker",
+   "codeRepository": "https://github.com/Zenzencat/syncguard-agaif2026"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://trongsrinutaphong.vercel.app/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Projects",
+     "item": "https://trongsrinutaphong.vercel.app/projects/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "SyncGuard",
+     "item": "https://trongsrinutaphong.vercel.app/projects/syncguard/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/">Trong Srinutaphong</a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/" aria-current="page">Projects</a><a href="/awards/">Awards</a><a href="/contact/">Contact</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a> / SyncGuard</nav>
+<p class="kicker">ASEAN GeoAI FUSION 2026 · Cybersecurity track</p>
+<h1>SyncGuard</h1>
+<p class="lead">GNSS spoofing and jamming detection for 4G/5G base-station timing</p>
+<p class="credit">Built entirely by me (Team Leader · ML/AI Lead).</p>
+<ul class="tags"><li>Python</li><li>scikit-learn</li><li>SHAP</li><li>FastAPI</li><li>PySAL</li><li>SQLite</li><li>Docker</li></ul>
+<h2>What it is</h2>
+<p>A software-first GeoAI shield that detects GNSS spoofing against base-station timing, maps incident spread across tower networks, prioritises threat areas, and supports resilient operator response without requiring hardware replacement.</p>
+<h2>Why</h2>
+<p>4G/5G base stations rely on GNSS timing for TDD, inter-cell coordination and handover. Spoofing feeds a receiver a false time and silently degrades the network, with no outage alarm. Most receivers cannot authenticate the signal, so detection must use what off-the-shelf receivers already report.</p>
+<h2>How it works</h2>
+<ol><li>Extract 23 receiver features per ~1 Hz epoch</li><li>RandomForest attack-vs-clean detector, split by recording</li><li>FastAPI service with a SHAP explanation per prediction</li><li>Hysteresis alerts — 3 readings to raise, 5 to clear</li><li>Moran&#x27;s I / LISA hotspots on 136 real towers (simulated spread)</li><li>Live dashboard + replay; one-command Docker deploy</li></ol>
+<h2>Results</h2>
+<p>Measured on the public JammerTest 2024 dataset — real u-blox receiver logs under real jamming, spoofing and meaconing attacks at a controlled test range in Norway — the model reached <strong>87.7% accuracy</strong> and <strong>93.7% attack recall</strong> on 8 held-out recordings unseen in training.</p>
+<p><strong>Limitations:</strong> Clean-class recall is only 66.7%, and test-range receivers are not 4G/5G base-station timing hardware, so transfer to base stations is unvalidated.</p>
+<h2>Recognition</h2>
+<p><a href="/awards/#geoai">Judge's Special Recognition Award · Finalist — ASEAN GeoAI FUSION 2026</a></p>
+<h2>Links</h2>
+<ul><li><a href="https://github.com/Zenzencat/syncguard-agaif2026" rel="noopener">Source code on GitHub</a></li></ul>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>© 2026 Trong Srinutaphong (<span lang="th">ตรง ศรีนุตพงษ์</span>) · <a href="https://github.com/Zenzencat" rel="me">GitHub</a></p>
+<p class="muted">No cookies, no analytics, no tracking.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photon ID — Trong Srinutaphong</title>
+<meta name="description" content="Photon ID by Trong Srinutaphong (Zen): Corneal-glint liveness detection that defeats deepfakes using the physics of light.">
+<meta name="author" content="Trong Srinutaphong">
+<link rel="canonical" href="https://trongsrinutaphong.vercel.app/projects/photon-id/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Trong Srinutaphong">
+<meta property="og:title" content="Photon ID — Trong Srinutaphong">
+<meta property="og:description" content="Photon ID by Trong Srinutaphong (Zen): Corneal-glint liveness detection that defeats deepfakes using the physics of light.">
+<meta property="og:url" content="https://trongsrinutaphong.vercel.app/projects/photon-id/">
+<meta property="og:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trong Srinutaphong (ตรง ศรีนุตพงษ์) — ML, computer vision, cybersecurity and robotics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photon ID — Trong Srinutaphong">
+<meta name="twitter:description" content="Photon ID by Trong Srinutaphong (Zen): Corneal-glint liveness detection that defeats deepfakes using the physics of light.">
+<meta name="twitter:image" content="https://trongsrinutaphong.vercel.app/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://trongsrinutaphong.vercel.app/#person",
+   "name": "Trong Srinutaphong",
+   "alternateName": [
+    "ตรง ศรีนุตพงษ์",
+    "Zen"
+   ],
+   "givenName": "Trong",
+   "familyName": "Srinutaphong",
+   "url": "https://trongsrinutaphong.vercel.app/",
+   "image": "https://trongsrinutaphong.vercel.app/og.png",
+   "description": "Student developer in Bangkok working on machine learning, computer vision, cybersecurity and robotics.",
+   "knowsAbout": [
+    "Machine learning",
+    "Computer vision",
+    "Cybersecurity",
+    "Robotics"
+   ],
+   "sameAs": [
+    "https://github.com/Zenzencat"
+   ]
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "Photon ID",
+   "url": "https://trongsrinutaphong.vercel.app/projects/photon-id/",
+   "description": "Corneal-glint liveness detection that defeats deepfakes using the physics of light",
+   "creator": {
+    "@id": "https://trongsrinutaphong.vercel.app/#person"
+   },
+   "dateCreated": "2026-02",
+   "keywords": "Python, OpenCV, MediaPipe, HMAC-SHA256",
+   "codeRepository": "https://github.com/Zenzencat/Photon-ID-"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://trongsrinutaphong.vercel.app/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Projects",
+     "item": "https://trongsrinutaphong.vercel.app/projects/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Photon ID",
+     "item": "https://trongsrinutaphong.vercel.app/projects/photon-id/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/">Trong Srinutaphong</a>
+<nav aria-label="Main"><a href="/">Home</a><a href="/about/">About</a><a href="/projects/" aria-current="page">Projects</a><a href="/awards/">Awards</a><a href="/contact/">Contact</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a> / Photon ID</nav>
+<p class="kicker">Digital Fraud Cybersecurity Hackathon 2025 · Samsung × KBTG</p>
+<h1>Photon ID</h1>
+<p class="lead">Corneal-glint liveness detection that defeats deepfakes using the physics of light</p>
+<p class="credit">Team project · my role: demo build and final-round presenter to the Samsung / KBTG judging panel.</p>
+<ul class="tags"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>HMAC-SHA256</li></ul>
+<h2>What it is</h2>
+<p>A physics-first liveness check. The screen flashes a randomised sequence of coloured lights at the user&#x27;s face, the camera captures the corneal glint (the tiny reflection on each eye), and the system checks that the right colour appears with physiologically plausible latency. Printed photos, screen replays, video loops and deepfake streams can&#x27;t react to the challenge in real time.</p>
+<h2>Why</h2>
+<p>Most anti-spoofing systems rely on ML models that can themselves be fooled by sophisticated deepfakes. Photon ID verifies liveness from corneal optics instead of a trained spoof classifier.</p>
+<h2>How it works</h2>
+<ol><li>Random colour challenge sequence, no two consecutive flashes alike, with black calibration frames</li><li>Corneal-glint capture from face landmarks</li><li>Colour-dominance and latency-window checks with an adaptive (EWMA) latency model</li><li>Stagnation detector for frozen or looping video</li><li>HMAC-SHA256 attestation packet simulating a hardware-backed signature</li></ol>
+<h2>Recognition</h2>
+<p><a href="/awards/#samsung-kbtg">Top 8 Teams — Digital Fraud Cybersecurity Hackathon 2025</a></p>
+<h2>Links</h2>
+<ul><li><a href="https://github.com/Zenzencat/Photon-ID-" rel="noopener">Source code on GitHub</a></li></ul>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p>© 2026 Trong Srinutaphong (<span lang="th">ตรง ศรีนุตพงษ์</span>) · <a href="https://github.com/Zenzencat" rel="me">GitHub</a></p>
+<p class="muted">No cookies, no analytics, no tracking.</p>
+</div></footer>
+</body>
+</html>
