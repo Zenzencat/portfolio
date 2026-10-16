@@ -107,7 +107,7 @@
 <h2>How it works</h2>
 <ol><li>Assemble public Zenodo Sentinel-1 datasets (Parts I–III)</li><li>Scene-aware train/test splitting to prevent leakage</li><li>Train U-Net with BCE-Dice loss</li><li>Build FastAPI inference service + SQLite</li><li>React/Leaflet map front-end</li><li>Live fetch: Sentinel-1 from Copernicus (CDSE) → inference → map, with AIS vessel matching</li></ol>
 <h2>Results</h2>
-<p>Mean oil IoU of <strong>0.724</strong> on the held-out test set. Validated against a real spill case study (PERKASA).</p>
+<p>Mean oil IoU of <strong>0.724</strong> on 10 held-out oil scenes (Zenodo Part III). Inspired by the MV PERKASA case (SkyTruth, 2019).</p>
 <p><strong>Limitations:</strong> Detection only by design.</p>
 <h2>Links</h2>
 <ul><li><a href="https://github.com/Zenzencat/Project-Pelagic" rel="noopener">Source code on GitHub</a></li></ul>

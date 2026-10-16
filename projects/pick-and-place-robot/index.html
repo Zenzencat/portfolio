@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autonomous Pick-and-Place Robot — Trong Srinutaphong</title>
-<meta name="description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm with custom inverse kinematics.">
+<meta name="description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm: YOLOv8 colour scan, base rotation and preset motion sequences.">
 <meta name="author" content="Trong Srinutaphong">
 <link rel="canonical" href="https://trongsrinutaphong.vercel.app/projects/pick-and-place-robot/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trong Srinutaphong">
 <meta property="og:title" content="Autonomous Pick-and-Place Robot — Trong Srinutaphong">
-<meta property="og:description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm with custom inverse kinematics.">
+<meta property="og:description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm: YOLOv8 colour scan, base rotation and preset motion sequences.">
 <meta property="og:url" content="https://trongsrinutaphong.vercel.app/projects/pick-and-place-robot/">
 <meta property="og:image" content="https://trongsrinutaphong.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Trong Srinutaphong (ตรง ศรีนุตพงษ์) — ML, computer vision, cybersecurity and robotics">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Autonomous Pick-and-Place Robot — Trong Srinutaphong">
-<meta name="twitter:description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm with custom inverse kinematics.">
+<meta name="twitter:description" content="Autonomous Pick-and-Place Robot by Trong Srinutaphong (Zen): Vision-guided 4-DOF robot arm: YOLOv8 colour scan, base rotation and preset motion sequences.">
 <meta name="twitter:image" content="https://trongsrinutaphong.vercel.app/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/styles.css">
@@ -53,12 +53,12 @@
    "@type": "CreativeWork",
    "name": "Autonomous Pick-and-Place Robot",
    "url": "https://trongsrinutaphong.vercel.app/projects/pick-and-place-robot/",
-   "description": "Vision-guided 4-DOF robot arm with custom inverse kinematics",
+   "description": "Vision-guided 4-DOF robot arm: YOLOv8 colour scan, base rotation and preset motion sequences",
    "creator": {
     "@id": "https://trongsrinutaphong.vercel.app/#person"
    },
    "dateCreated": "2025-08",
-   "keywords": "Intel RealSense, YOLOv8, OpenCV, Inverse kinematics, Arduino"
+   "keywords": "YOLOv8, OpenCV, Robot arm, Preset motion sequences, pyfirmata2, Arduino"
   },
   {
    "@type": "BreadcrumbList",
@@ -96,15 +96,16 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a> / Autonomous Pick-and-Place Robot</nav>
 <p class="kicker">Innovedex Robotics Competition Thailand 2025</p>
 <h1>Autonomous Pick-and-Place Robot</h1>
-<p class="lead">Vision-guided 4-DOF robot arm with custom inverse kinematics</p>
-<p class="credit">Team project · my role: robot architect (vision and arm integration), custom inverse-kinematics implementation, field tuning under competition conditions.</p>
-<ul class="tags"><li>Intel RealSense</li><li>YOLOv8</li><li>OpenCV</li><li>Inverse kinematics</li><li>Arduino</li></ul>
+<p class="lead">Vision-guided 4-DOF robot arm: YOLOv8 colour scan, base rotation and preset motion sequences</p>
+<p class="credit">Team project · my role: robot architect (vision and arm integration), arm motion sequences and base-rotation logic, field tuning under competition conditions.</p>
+<ul class="tags"><li>YOLOv8</li><li>OpenCV</li><li>Preset motion sequences</li><li>pyfirmata2</li><li>Arduino</li></ul>
 <h2>What it is</h2>
-<p>A fully autonomous pick-and-place robot: Intel RealSense depth sensing, YOLOv8 + OpenCV object detection, and a 4-DOF arm driven by a custom inverse-kinematics pipeline — vision to actuation, end to end.</p>
+<p>An autonomous pick-and-place robot: a camera and YOLOv8 scan for objects by colour, the 4-DOF arm's base rotates to each object's position, and preset motion sequences (pick, grab, lift, place) run through an Arduino.</p>
 <h2>Why</h2>
 <p>The task was logistics-style pick-and-place: picking up objects and placing or stacking them in the right positions, which is exactly what real warehouse robots have to do.</p>
 <h2>How it works</h2>
-<ol><li>Integrate YOLOv8 + OpenCV detection with RealSense depth</li><li>Custom IK pipeline for the 4-DOF arm</li><li>Arduino servo control</li><li>Field testing &amp; competition runs</li></ol>
+<ol><li>Scan the area with the camera and detect objects by colour with YOLOv8</li><li>Convert each detected object's position into a base rotation angle</li><li>Run preset motion sequences (pick, grab, lift, place) on 5 servos through an Arduino (pyfirmata2)</li><li>Field testing &amp; competition runs</li></ol>
+<p><strong>Limitations:</strong> I started an inverse-kinematics solver but did not finish it in time for the competition, so the arm used preset motions and could adapt to object positions only in a limited way.</p>
 <h2>Recognition</h2>
 <p><a href="/awards/#innovedex">รองชนะเลิศอันดับที่ 3 (3rd Runner-Up) — Innovedex Robotics Competition Thailand 2025</a></p>
 </main>
