@@ -26,3 +26,5 @@ Award wording is copied exactly as printed on each certificate.
 ```bash
 python -m http.server 4321
 ```
+
+Auto-deploy re-checked on 21 Oct 2026 after reconnecting the Vercel GitHub integration.
